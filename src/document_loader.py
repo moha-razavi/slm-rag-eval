@@ -34,12 +34,10 @@ def load_pdf_document(pdf_path: str, output_path: str) -> List[Dict]:
     output_path = Path(output_path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
-    with output_path.open("w", encoding="utf-8") as f:
-        for i, page in enumerate(pages, start=1):
-            # print(page["text"])
-            # print(page["metadata"])
+    with output_path.open("w", encoding="utf-8") as f:  
+        for i, doc in enumerate(documents, start=1):
             f.write(f"## Page {i}\n\n")
-            f.write(page["text"])
+            f.write(doc["text"])
             f.write("\n\n")
 
     return documents
