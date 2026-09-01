@@ -1,0 +1,1 @@
+"""Persist raw RAGAS scores and a compact summary report."""

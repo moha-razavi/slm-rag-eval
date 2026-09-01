@@ -1,8 +1,0 @@
-faiss-cpu
-numpy
-torch
-transformers
-sentence-transformers
-langchain-text-splitters
-pymupdf4llm
-huggingface_hub
