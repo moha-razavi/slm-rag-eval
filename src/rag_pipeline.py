@@ -5,9 +5,6 @@ chunk -> embed -> FAISS IndexFlatIP -> top-k retrieval -> construct_prompt ->
 local LM generation.  This module only packages those existing steps so the
 same pipeline can be called by the evaluation runner.
 """
-
-from __future__ import annotations
-
 from pathlib import Path
 from typing import List, Tuple
 
