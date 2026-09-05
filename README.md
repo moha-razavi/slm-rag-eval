@@ -227,9 +227,9 @@ save raw scores and aggregate summaries
 
 ---
 
-## Other Options
+## Other Options Available
 
-### 4. Explicitly regenerate the testset
+### 4.1. Explicitly regenerate the testset
 
 ```bash
 python -m evaluation.evaluator --force-testset
@@ -239,7 +239,7 @@ python -m evaluation.evaluator --force-testset
 `--force-testset` deletes and rebuilds the benchmark, so it triggers new external API calls.
 For fair before/after comparisons, reuse the same persisted testset whenever possible.
 
-### 6. Run stages independently
+### 4.2. Run stages independently
 
 The evaluation modules can also be executed separately when debugging or benchmarking one stage at a time:
 
