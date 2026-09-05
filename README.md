@@ -20,11 +20,6 @@ flowchart LR
     C --> D[BGE Embeddings]
     D --> E[FAISS Vector Index]
 
-    Q[Evaluation Question] --> F[Local RAG Pipeline]
-    E --> F
-    F --> G[Retrieved Contexts]
-    F --> H[Local SLM Response]
-
     C --> I[Reference Chunk Sampling]
     I --> J[One-time Testset Generation]
     J --> K[testset.jsonl]
