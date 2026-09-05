@@ -39,7 +39,7 @@ HHEM_BATCH_SIZE = int(os.getenv("RAG_EVAL_HHEM_BATCH_SIZE", "10"))
 EVAL_API_KEY = "YOUR_API_KEY"
 
 # Optional environment variables:
-EVAL_API_BASE_URL = "YOUAR_EVAL_API_BASE_URL" or None # for OpenAI-compatible APIs export example: "https://provider.example/v1"
+EVAL_API_BASE_URL = "YOUAR_EVAL_API_BASE_URL"# for OpenAI-compatible APIs export example: "https://provider.example/v1" Or Use None 
 EVAL_API_MODEL = "YOUAR_RAG_EVAL_API_MODEL"
 EVAL_API_TEMPERATURE = 0.0
 EVAL_API_TIMEOUT_SECONDS = 120.0
