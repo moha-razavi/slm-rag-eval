@@ -4,7 +4,6 @@ from datetime import datetime, timezone
 from typing import Dict
 from .config import (
     RAW_SCORES_JSONL_PATH,
-    RAW_SCORES_PATH,
     RESULTS_DIR,
     SUMMARY_JSON_PATH,
     SUMMARY_MD_PATH,
@@ -22,7 +21,6 @@ def save_results(evaluation_result) -> Dict[str, float]:
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 
     frame = evaluation_result.to_pandas()
-    frame.to_csv(RAW_SCORES_PATH, index=False)
 
     with RAW_SCORES_JSONL_PATH.open("w", encoding="utf-8") as handle:
         for row in frame.to_dict(orient="records"):
@@ -37,7 +35,7 @@ def save_results(evaluation_result) -> Dict[str, float]:
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "num_samples": int(len(frame)),
         "metrics": summary,
-        "raw_scores_csv": str(RAW_SCORES_PATH),
+        "raw_scores_jsonl": str(RAW_SCORES_JSONL_PATH),
     }
     SUMMARY_JSON_PATH.write_text(json.dumps(payload, indent=2), encoding="utf-8")
 
@@ -54,7 +52,7 @@ def save_results(evaluation_result) -> Dict[str, float]:
     lines.extend(
         [
             "",
-            f"Raw per-sample scores: `{RAW_SCORES_PATH}`",
+            f"Raw per-sample scores: `{RAW_SCORES_JSONL_PATH}`",
             "",
             "Notes: the two context metrics are non-LLM string-similarity metrics. "
             "Faithfulness uses the external evaluator only for claim extraction and "
