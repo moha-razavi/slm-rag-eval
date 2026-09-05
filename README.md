@@ -20,6 +20,10 @@ flowchart LR
     C --> D[BGE Embeddings]
     D --> E[FAISS Vector Index]
 
+    E --> F[Local RAG Pipeline]
+    F --> G[Retrieved Contexts]
+    F --> H[Local SLM Response]
+
     C --> I[Reference Chunk Sampling]
     I --> J[One-time Testset Generation]
     J --> K[testset.jsonl]
@@ -33,6 +37,7 @@ flowchart LR
     M --> N[Context Precision]
     M --> O[Context Recall]
     M --> P[HHEM Faithfulness]
+
     N --> R[JSONL + Summary Reports]
     O --> R
     P --> R
