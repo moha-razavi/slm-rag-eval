@@ -71,16 +71,6 @@ A central design goal of this fork is to keep **as much evaluation work local as
 | Test question + answer generation | External API, one-time | Build a reusable synthetic benchmark from real source chunks |
 | Faithfulness claim extraction | External API | Extract claims before local HHEM verification |
 
-### Why these metrics?
-
-The benchmark separates the two most important failure modes in a RAG system:
-
-**Retrieval quality** asks whether the correct evidence reached the model. `NonLLMContextPrecisionWithReference` highlights irrelevant or noisy retrieval, while `NonLLMContextRecall` highlights missing reference evidence.
-
-**Generation faithfulness** asks whether the final answer remained grounded in what was retrieved. `FaithfulnesswithHHEM` uses an evaluator LLM only to extract claims, then performs entailment/faithfulness verification locally with HHEM.
-
-This makes failures easier to diagnose than a single end-to-end accuracy score. Low recall points toward retrieval/indexing problems; strong retrieval with weak faithfulness points toward generation or prompting problems.
-
 ### Benchmark snapshot
 
 An included 20-sample evaluation run produced:
