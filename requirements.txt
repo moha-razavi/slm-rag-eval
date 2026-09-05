@@ -1,0 +1,16 @@
+# Local RAG
+faiss-cpu
+numpy
+torch
+transformers
+sentence-transformers
+langchain-text-splitters<0.3
+pymupdf4llm
+huggingface_hub
+
+# RAG Evaluation
+ragas==0.3.9
+langchain-core>=0.2,<0.3
+langchain-openai>=0.1,<0.2
+langchain-community<0.3
+openai
