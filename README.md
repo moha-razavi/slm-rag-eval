@@ -1,4 +1,4 @@
-# Local SLM RAG — Evaluation & Benchmarking Fork
+# Local SLM RAG: Evaluation & Benchmarking Fork
 
 > **Evaluation add-on for a fully local Retrieval-Augmented Generation pipeline.**  
 > This fork extends the original `slm_rag` project with a reproducible benchmarking workflow built around **RAGAS 0.3.9**, local retrieval/generation, persisted JSONL datasets, and a deliberately minimized use of external LLM calls.
